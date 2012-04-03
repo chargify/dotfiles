@@ -1,0 +1,9 @@
+e the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+if has("gui_running")
+      set fuoptions=maxvert,maxhorz
+            " au GUIEnter * set fullscreen
+            "       " endif
+            "       endif
+endif
