@@ -1,9 +1,37 @@
-e the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+" move between windows
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
+" custom font action
+set guifont=Monaco:h14
+set antialias
+set cursorline
+
+" colors
+color vividchalk
+
+" yank to system clipboard
+set clipboard=unnamed
+
+" hide the huge macvim toolbar
 if has("gui_running")
-      set fuoptions=maxvert,maxhorz
-            " au GUIEnter * set fullscreen
-            "       " endif
-            "       endif
+  set guioptions=egmrt
 endif
+
+" ack shortcuts
+map <leader>A :Ack<cword><CR>
+map <leader>a :Ack<Space>
+
+" my nerdtree leader + d brings all the boys to the yard
+map <leader>d :NERDTreeToggle<CR>
+
+" disable audible bell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
+" Textmate invisibles
+set listchars=tab:▸\ ,eol:¬
