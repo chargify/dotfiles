@@ -1,0 +1,34 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+. /etc/bashrc
+fi
+
+# User specific aliases and functions
+export EDITOR="/usr/local/bin/vim"
+export PATH=~/bin:$PATH
+
+alias app="cd ~/code/chargify"
+alias ch="cd ~/code/chargify"
+alias l="ls -lah"
+alias gst="git status"
+alias bi="bundle install"
+alias bundleup="gem install bundler && bundle install"
+alias be="bundle exec"
+alias gca="git commit -v -a"
+alias ss="rails server"
+alias c="be cucumber -f pretty"
+alias cur="be cucumber -f pretty -t @current"
+alias b="cd ~/code/boutique"
+alias all='be rake spec;be cucumber features'
+alias sp="bundle exec spec --color -f specdoc"
+
+function give_me_console {
+  cd ~/code/chargify && ./script/console 
+}
+
+source ~/.bash/git_prompt.sh
+source /etc/bash_completion.d/git
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
