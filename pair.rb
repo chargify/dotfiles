@@ -16,9 +16,8 @@ PAIR_EMAIL = "pair@chargify.com"
 
 AUTHORS = {
   "mk" => "Michael Klett",
-  "bc" => "Brent Collier",
   "nv" => "Nathan Verni",
-  "sf" => "Shay Frendt"
+  "jr" => "Jeremy Rowe"
 }
 
 ## End of configuration
