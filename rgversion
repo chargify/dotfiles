@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+gem 'gems', '>=0.7.0'
+
+require 'gems'
+
+gem_name = ARGV[0]
+results  = Gems.versions(gem_name)
+if results.instance_of? Array
+  puts (results.first)["number"]
+else
+  puts "Could not find any versions for #{gem_name}"
+end
