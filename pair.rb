@@ -18,7 +18,16 @@ AUTHORS = {
   "mk" => "Michael Klett",
   "nv" => "Nathan Verni",
   "jr" => "Jeremy Rowe",
-  "jn" => "James Newton"
+  "jn" => "James Newton",
+  "gm" => "Graham McIntire"
+}
+
+GITHUB_EMAILS = {
+  "mk" => "",
+  "nv" => "",
+  "jr" => "jeremy.w.rowe@gmail.com",
+  "jn" => "",
+  "gm" => "gmcintire@gmail.com"
 }
 
 ## End of configuration
@@ -39,8 +48,10 @@ authors = ARGV.map do |initials|
 end
 
 if authors.any?
+  email = PAIR_EMAIL
   if authors.size == 1
     authors = authors.first
+    email   = GITHUB_EMAILS[AUTHORS.invert[authors]]
   elsif authors.size == 2
     authors = authors.join(" and ")
   else
@@ -51,11 +62,11 @@ if authors.any?
 
   `git config user.name '#{authors}'`
   `git config user.initials '#{initials}'`
-  `git config user.email '#{PAIR_EMAIL}'`
+  `git config user.email '#{email}'`
 
   puts "user.name = #{authors}"
   puts "user.initials = #{initials}"
-  puts "user.email = #{PAIR_EMAIL}"
+  puts "user.email = #{email}"
 else
   `git config --unset user.name`
   `git config --unset user.initials`
